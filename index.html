@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GTEZRRVKR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9GTEZRRVKR');
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacktron 1.0V | IEEE CS Chapter of SLTC</title>
+    <link rel="icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.2/swiper-bundle.css" integrity="sha512-fueOAoX4ndEk7eR9OniEO24QSsXT9pSPcUE4vp4nfc7WxNGu5fi7j/JAXBF4Xa7ePYq5UO1JcwFVKfsoEkSRpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        a{
+            text-decoration: none;
+        }
+        .profile-menu .dropdown-menu {
+            right: 0;
+            left: unset;
+        }
+        .profile-menu .fa-fw {
+            margin-right: 10px;
+        }
+        .toggle-change::after {
+            border-top: 0;
+            border-bottom: 0.3em solid;
+        }
+        .navbar{
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            z-index: 100;
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            font-family: 'Chakra Petch', sans-serif;
+            font-weight: bold !important;
+            background-color: #0c0e2b9c;
+        }
+        .navbar-brand{
+            font-weight: 100;
+        }
+        .nav-item{
+            font-weight: 500;
+            letter-spacing: 3px;
+        }
+        .git-repo{
+            color: var(--neon-blue) !important;
+        }
+        .showcase{
+            padding-top: 8rem;
+            padding-bottom: 10rem;
+            background-image: url('img/neon-night.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .glass-card{
+            background: rgba(255, 255, 255, 0.124);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid #fff;
+        }
+        .glass-card h1{
+            color: #fff;
+            font-family: 'Caesar Dressing', Impact;
+            font-size: 4rem;
+        }
+        .glass-card .round-btn{
+            color: #fff;
+            font-family: 'Teko', Courier !important;
+            font-size: 2rem;
+            border-radius: 60px;
+            border: 4px solid #fff;
+            padding: 10px 20px;
+            transition: 0.4s ease-out;
+        }
+        .round-btn:hover{
+            background-color: #fff;
+            color: #000;
+        }
+        .side-pane h1{
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+        }
+        .side-pane h4{
+            color: #fff;
+            font-family: 'Major Mono Display', Courier;
+        }
+        .neon-btn{
+            font-family: 'Teko', Courier;
+            background-color: var(--neon-blue);
+            color: #000;
+            padding: 4px 16px 2px 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            letter-spacing: 1.3px;
+            transition: 0.4s ease-out;
+        }
+        .neon-outline-btn{
+            background-color: none;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            font-family: 'Chakra Petch',sans-serif;
+            padding: 8px 20px;
+            font-size: 24px;
+            transition: 0.4s ease-out;
+        }
+        .neon-btn:hover{
+            color: #fff;
+            box-shadow: 0px 0px 8px var(--neon-blue);
+        }
+        .neon-outline-btn:hover{
+            color: #fff;
+            background-color: var(--neon-blue);
+            box-shadow: 0 0 8px #fff;
+        }
+        .coverflow .typed-stuff{
+            padding-top: 6rem;
+            padding-left: 2rem;
+            padding-right: 1rem;
+            font-family: 'Chakra Petch', sans-serif;
+        }
+        .typed-cursor {
+            font-size: 2.5rem;
+        }
+        .swiper {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+        }
+        .abs-slide{
+            font-family: 'Teko', sans-serif;
+            color: #fff;
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            text-shadow: 0 0 8px #000;
+        }
+        .swiper-pagination-bullet{
+            background-color: var(--neon-blue);
+        }
+        .threed h1 {
+            text-align: center;
+            font-family: 'Chakra Petch', Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 80px;
+            transform: skewY(-10deg);
+            letter-spacing: 4px;
+            word-spacing: -8px;
+            color: #05dbf2;
+            text-shadow: 
+                -1px -1px 0 #033f73,
+                -2px -2px 0 #033f73,
+                -3px -3px 0 #033f73,
+                -4px -4px 0 #033f73,
+                -5px -5px 0 #033f73,
+                -6px -6px 0 #033f73,
+                -7px -7px 0 #033f73,
+                -8px -8px 0 #033f73,
+                -9px 9px 40px #05dbf2
+        }
+        .outer{
+            padding:0px 0px;
+            position:relative;
+            transform: translateY(-100px);
+        }
+        .skewed-div{
+            width:100%;
+            background-color:var(--bg-color);
+            -webkit-transform: skewY(-3deg);
+            transform: skewY(-3deg);
+            padding:4%;
+            text-align:center;
+            position: relative;
+        }
+        .cs-hr{
+            background: var(--neon-blue);
+            height: 4px !important;
+            opacity: 1;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+        }
+        .skewed-content{
+            -webkit-transform: skewY(3deg);
+            transform: skewY(3deg);
+        }
+        .skewed-content p{
+            padding:2% 20%;
+            font-size:20px;
+            line-height:30px;
+        }
+        .time-date{
+            font-size: 1.8rem;
+            font-family: 'Major Mono Display', Courier;
+        }
+        .time-content{
+            font-size: 1.8rem;
+            font-family: 'Teko', sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .colored{
+            color: var(--neon-blue);
+            font-family: 'Chakra Petch', sans-serif;
+            font-weight: bold;
+        }
+        .colored i{
+            font-size: 40px;
+            margin-bottom: 1rem;
+        }
+        .con-text{
+            color: #fff;
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+        .motivation{
+            background-color: #17161c;
+        }
+        .motivational-text{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            font-family: 'Chakra Petch', sans-serif;
+            width: 500px;
+        }
+        .motivational-text h4{
+            color: #fff;
+            font-size: 2rem;
+        }
+        .motivational-text h6{
+            color: #05dbf2;
+        }
+        .register-now{
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        .register-now h3{
+            margin-bottom: 3rem;
+            font-family: 'Major Mono Display';
+            color: #fff;
+        }
+        footer{
+            font-family: 'Chakra Petch',sans-serif;
+            color: #fff;
+        }
+        footer ul{
+            list-style: none;
+        }
+        footer .copyright{
+            background-color: #17161c;
+            text-align: center;
+        }
+        @media (max-width: 575.98px) {
+            .swiper-slide {
+                width: 300px;
+                height: 300px;
+            }
+            .threed h1{
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <header>
+        <nav data-aos="fade-right" class="navbar navbar-expand-lg navbar-dark bg-purple shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="img/hacktron_low.png" height="45px" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html" id="hm">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="hm">Bootcamp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="hm">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="hm">Rules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="hm">Sponsors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="hm">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html" id="hm">Contact Us</a>
+                        </li>
+                    </ul>
+                    <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-menu"> 
+                        <li><a class="nav-link git-repo bx-flashing" href="https://github.com/re4nightwing/InspiHER-TECH-SLTC-IEEE-WIE" target="_blank"><i class="fab fa-github text-success"></i> Git Repo </a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="showcase">
+        <div id="showcase-content">
+            <div class="container-xxl" id="glass-container">
+                <div class="row justify-content-around">
+                    <div class="col-md-7 col-11">
+                        <div class="glass-card p-5">
+                            <h1>You truly are the lowest scum in history.</h1>
+                            <div class="mt-5">
+                                <a href="#" class="round-btn">-Jotaro Kujo</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-11">
+                        <div class="side-pane mt-5">
+                            <h1>Actually, I'm the best.</h1>
+                            <h4>-Gojo Satoru</h4>
+                            <div class="mt-4">
+                                <a href="#" class="neon-btn">Jujutsu Kaisen</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coverflow">
+                <div class="container-xxl">
+                    <div class="typed-stuff text-light">
+                        <h1 id="typed" style="display: inline;"></h1>
+                    </div>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(img/cir.jpg)">
+                            <div class="abs-slide">
+                                <h3>Rias Gremory</h3>
+                                <h5>High School DxD</h5>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/cir.jpg)">
+                            <div class="abs-slide">
+                                <h3>Kyouko Hori</h3>
+                                <h5>Horimiya</h5>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/cir.jpg)">
+                            <div class="abs-slide">
+                                <h3>Raphtalia</h3>
+                                <h5>Rising of the Shield Hero</h5>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/cir.jpg)">
+                            <div class="abs-slide">
+                                <h3>Touka Kirishima</h3>
+                                <h5>Tokyo Ghoul</h5>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/cir.jpg)">
+                            <div class="abs-slide">
+                                <h3>Hiratsuka Sensei</h3>
+                                <h5>Oregairu</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="outer">
+            <div class="skewed-div">
+                <hr class="cs-hr">
+                <div class="skewed-content">
+                    <div class="text-center threed">
+                        <h1>PRIZES</h1>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row justify-content-around">
+                            <div class="col-lg-3 col-md-4 col-10">
+                                <div class="card" style="width: 100%;">
+                                    <img src="https://i.pinimg.com/564x/f3/82/49/f382497ddf6102f9ff118e39995652b6.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10">
+                                <div class="card" style="width: 100%;">
+                                    <img src="https://i.pinimg.com/564x/f3/82/49/f382497ddf6102f9ff118e39995652b6.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10">
+                                <div class="card" style="width: 100%;">
+                                    <img src="https://i.pinimg.com/564x/f3/82/49/f382497ddf6102f9ff118e39995652b6.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skewed-div">
+                <hr class="cs-hr">
+                <div class="skewed-content">
+                    <div class="text-center threed">
+                        <h1>Timeline</h1>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row justify-content-center text-start text-light">
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;">
+                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;">
+                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;">
+                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;">
+                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;">
+                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;">
+                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;">
+                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;">
+                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-lg-3 col-md-5 col-10 pe-5">
+                    <div class="colored">
+                        <i class="fas fa-file-archive"></i>
+                        <h3>Lorem, ipsum.</h3>
+                    </div>
+                    <div class="con-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 col-10 pe-5">
+                    <div class="colored">
+                        <i class="fas fa-file-archive"></i>
+                        <h3>Lorem, ipsum.</h3>
+                    </div>
+                    <div class="con-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 col-10 pe-5">
+                    <div class="colored">
+                        <i class="fas fa-file-archive"></i>
+                        <h3>Lorem, ipsum.</h3>
+                    </div>
+                    <div class="con-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 col-10 pe-5">
+                    <div class="colored">
+                        <i class="fas fa-file-archive"></i>
+                        <h3>Lorem, ipsum.</h3>
+                    </div>
+                    <div class="con-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="motivation mt-5 py-4">
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/Artboard 1.png" class="d-block w-100" alt="...">
+                        <div class="motivational-text">
+                            <h4>Amme... salmon sambolui kosi hadanna ko</h4>
+                            <h6>-Nawodya Ishan(CS chair)</h6>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/Artboard 1.png" class="d-block w-100" alt="...">
+                        <div class="motivational-text">
+                            <h4>Amme... salmon sambolui kosi hadanna ko</h4>
+                            <h6>-Nawodya Ishan(CS chair)</h6>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/Artboard 1.png" class="d-block w-100" alt="...">
+                        <div class="motivational-text">
+                            <h4>Amme... salmon sambolui kosi hadanna ko</h4>
+                            <h6>-Nawodya Ishan(CS chair)</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="register-now">
+        <div class="container text-center">
+            <h3>Lorem ipsum dolor sit.</h3>
+            <a href="#" class="neon-outline-btn">Register Now</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container py-5">
+            <div class="row justify-content-around">
+                <div class="col-lg-5 col-md-4 col-10 text-center pb-3">
+                    <img src="img/HackTron Logo For Dark Backgrounds.png" height="50px" alt="">
+                </div>
+                <div class="col-lg-7 col-md-8 col-12">
+                    <div class="row">
+                        <div class="col-4 text-center"><h5 style="color: var(--neon-blue);">Hacktron 1.0V</h5></div>
+                        <div class="col-4 text-center"><h5>About Us</h5></div>
+                        <div class="col-4 text-center">
+                            <h5>Follow Us</h5>
+                            <ul class="ps-0">
+                                <li>Facebook</li>
+                                <li>Twitter</li>
+                                <li>LinkedIn</li>
+                                <li>Instagram</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright py-3">
+            <h6>&copy;2021 <span style="color: var(--neon-blue);">Hacktron 1.0V</span>. All Rights Reserved</h6>
+        </div>
+    </footer>
+    <div id="typed-strings">
+        <h1>Fear is not evil. It tells you what weakness is.</h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.2/swiper-bundle.min.js" integrity="sha512-Zwjw7asxDjQh1nXXmKsB/SRXUcbL+ErSIZ+p4IEhtbXyMU1NsbvjzC410GxsIQ3kCLAq0x9qDpeAATg72DFlyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init();
+        document.querySelectorAll('.dropdown-toggle').forEach(item => {
+            item.addEventListener('click', event => {
+ 
+                if(event.target.classList.contains('dropdown-toggle') ){
+                    event.target.classList.toggle('toggle-change');
+                } else if(event.target.parentElement.classList.contains('dropdown-toggle')){
+                    event.target.parentElement.classList.toggle('toggle-change');
+                }
+            })
+        });
+    </script>
+    <script>
+        var typed = new Typed('#typed', {
+            stringsElement: '#typed-strings',
+            loop: false,
+            typeSpeed: 30,
+            backSpeed: 50,
+        });
+        const bg = document.querySelector('#showcase-content');
+        const elem = document.querySelector('#glass-container');
+        const windowWidth = window.innerWidth / 5;
+        const windowHeight = window.innerHeight / 5 ;
+        
+        bg.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / windowWidth;
+        const mouseY = e.clientY / windowHeight;
+        
+        elem.style.transform = `translate3d(-${mouseX}%, -${mouseY}%, 0)`;
+        });
+    </script>
+    <script type="module">
+        var swiper = new Swiper('.swiper', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            initialSlide : 2,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            autoplay: {
+                delay: 5000,
+            },
+        });
+    </script>
+</body>
+</html>

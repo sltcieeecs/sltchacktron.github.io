@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Chakra+Petch:wght@500;700&family=Major+Mono+Display&family=Teko:wght@400;600&display=swap');
+:root{
+    --neon-blue:#05dbf2;
+    --light-blue: #0075e3;
+    --dark-blue: #043f8c;
+    --bg-color: #02030d;
+    --dead-blue: #033f73;
+}
+body{
+    background-color: var(--bg-color) !important;
+}
