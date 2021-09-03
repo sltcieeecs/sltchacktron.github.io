@@ -373,4 +373,7 @@ footer .copyright{
         padding: 0 10px;
         width: auto;
     }
+    .motivational-text h4{
+        font-size: 1rem;
+    }
 }
