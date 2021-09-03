@@ -369,6 +369,8 @@ footer .copyright{
         font-size: 60px;
     }
     .motivational-text{
+        left: 0;
+        padding: 0 10px;
         width: auto;
     }
 }
