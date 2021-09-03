@@ -6,6 +6,369 @@
     --bg-color: #02030d;
     --dead-blue: #033f73;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: var(--bg-color) !important;
+}
+a{
+    text-decoration: none;
+}
+.profile-menu .dropdown-menu {
+    right: 0;
+    left: unset;
+}
+.profile-menu .fa-fw {
+    margin-right: 10px;
+}
+.toggle-change::after {
+    border-top: 0;
+    border-bottom: 0.3em solid;
+}
+.navbar{
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    z-index: 100;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold !important;
+    background-color: #0c0e2b9c;
+}
+.navbar-brand{
+    font-weight: 100;
+}
+.nav-item{
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+.git-repo{
+    color: var(--neon-blue) !important;
+}
+.showcase{
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+    background-image: url('../img/neon-night.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.glass-card{
+    background: rgba(158, 158, 158, 12%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid #fff;
+}
+.glass-card h1{
+    color: #fff;
+    font-family: 'Caesar Dressing', Impact;
+    font-size: 4rem;
+}
+.glass-card .round-btn{
+    color: #fff;
+    font-family: 'Teko', Courier !important;
+    font-size: 2rem;
+    border-radius: 60px;
+    border: 4px solid #fff;
+    padding: 10px 20px;
+    transition: 0.4s ease-out;
+}
+.round-btn:hover{
+    background-color: #fff;
+    color: #000;
+}
+.side-pane h1{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+}
+.side-pane h4{
+    color: #fff;
+    font-family: 'Major Mono Display', Courier;
+}
+.neon-btn{
+    font-family: 'Teko', Courier;
+    background-color: var(--neon-blue);
+    color: #000;
+    padding: 4px 16px 2px 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 1.3px;
+    transition: 0.4s ease-out;
+}
+.neon-outline-btn{
+    background-color: none;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    font-family: 'Chakra Petch',sans-serif;
+    padding: 8px 20px;
+    font-size: 24px;
+    transition: 0.4s ease-out;
+}
+.neon-btn:hover{
+    color: #fff;
+    box-shadow: 0px 0px 8px var(--neon-blue);
+}
+.neon-outline-btn:hover{
+    color: #fff;
+    background-color: var(--neon-blue);
+    box-shadow: 0 0 8px #fff;
+}
+.coverflow .typed-stuff{
+    padding-top: 6rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    font-family: 'Chakra Petch', sans-serif;
+}
+.typed-cursor {
+    font-size: 2.5rem;
+}
+.swiper {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+}
+.abs-slide{
+    font-family: 'Teko', sans-serif;
+    color: #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    text-shadow: 0 0 8px #000;
+}
+.swiper-pagination-bullet{
+    background-color: var(--neon-blue);
+}
+.threed h1 {
+    text-align: center;
+    font-family: 'Chakra Petch', Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 80px;
+    transform: skewY(-10deg);
+    letter-spacing: 4px;
+    word-spacing: -8px;
+    color: #05dbf2;
+    text-shadow: 
+        -1px -1px 0 #033f73,
+        -2px -2px 0 #033f73,
+        -3px -3px 0 #033f73,
+        -4px -4px 0 #033f73,
+        -5px -5px 0 #033f73,
+        -6px -6px 0 #033f73,
+        -7px -7px 0 #033f73,
+        -8px -8px 0 #033f73,
+        -9px 9px 40px #05dbf2
+}
+.outer{
+    padding:0px 0px;
+    position:relative;
+    transform: translateY(-100px);
+}
+.skewed-div{
+    width:100%;
+    background-color:var(--bg-color);
+    -webkit-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    padding:4%;
+    text-align:center;
+    position: relative;
+}
+.cs-hr{
+    background: var(--neon-blue);
+    height: 4px !important;
+    opacity: 1;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+.skewed-content{
+    -webkit-transform: skewY(3deg);
+    transform: skewY(3deg);
+}
+.skewed-content p{
+    padding:2% 20%;
+    font-size:20px;
+    line-height:30px;
+}
+.card{
+    background: rgba(158, 158, 158, 12%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 5px 5px 8px 3px #00000059;
+}
+.card-img-top{
+    padding: 10px;
+}
+.card-text{
+    font-family: 'Caesar Dressing', 'Courier New';
+    font-size: 2rem !important;
+    color: #fff;
+}
+.time-date{
+    font-size: 1.8rem;
+    font-family: 'Major Mono Display', Courier;
+}
+.time-content{
+    font-size: 1.8rem;
+    font-family: 'Teko', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.colored{
+    color: var(--neon-blue);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: bold;
+}
+.colored i{
+    font-size: 40px;
+    margin-bottom: 1rem;
+}
+.con-text{
+    color: #fff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+#faq-section{
+    padding-top: 4rem;
+}
+.accordion{
+    font-family: 'Teko', sans-serif;
+    font-size: 1.3rem;
+} 
+.accordion-button {
+    color: #fff;
+    background-color: #121435;
+    font-size: 1.4rem;
+}
+.accordion-button:not(.collapsed) {
+    color: var(--neon-blue);
+    background-color: #070926;
+}
+.accordion-item:first-of-type, .accordion-item:last-of-type{
+    border-radius: 0px;
+}
+.accordion-item:first-of-type .accordion-button,  .accordion-item:last-of-type .accordion-button{
+    border-radius: 0px;
+}
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-radius: 0px;
+}
+.accordion-item {
+    background-color: #05dbf2;
+    border: 4px solid rgb(5 219 242);
+}
+.accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2305dbf2'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.ads-swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.ads-swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.motivation{
+    background-color: #17161c;
+}
+.motivational-text{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-family: 'Chakra Petch', sans-serif;
+    width: 500px;
+}
+.motivational-text h4{
+    color: #fff;
+    font-size: 2rem;
+}
+.motivational-text h6{
+    color: #05dbf2;
+}
+.register-now{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.register-now h3{
+    margin-bottom: 3rem;
+    font-family: 'Major Mono Display';
+    color: #fff;
+}
+.sponsor-section h1{
+    font-family: 'Caesar Dressing', 'Courier New';
+    font-size: 3rem;
+}
+.sponsor-section h2{
+    font-family: 'Chakra Petch';
+    color: #fff;
+}
+.sponsor-section img{
+    border-radius: 4rem;
+}
+footer{
+    background-color: #080a1f;
+    font-family: 'Chakra Petch',sans-serif;
+    color: #fff;
+}
+footer ul{
+    list-style: none;
+}
+footer .copyright{
+    background-color: #17161c;
+    text-align: center;
+}
+@media (max-width: 575.98px) {
+    .swiper-slide {
+        width: 300px;
+        height: 300px;
+    }
+    .threed h1{
+        font-size: 60px;
+    }
+    .motivational-text{
+        width: auto;
+    }
 }
