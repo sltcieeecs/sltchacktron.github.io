@@ -345,8 +345,24 @@ a{
     font-family: 'Chakra Petch';
     color: #fff;
 }
-.sponsor-section img{
-    border-radius: 4rem;
+.sponsor-card{
+    position: relative;
+    border-top:1px solid var(--neon-blue); 
+    border-right: 1px solid var(--neon-blue);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    transition: 0.4s ease-out;
+}
+.sponsor-card:hover{
+    box-shadow: 2px -2px 8px -2px #05dbf2;
+}
+.sponsor-card h2{
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-color);
+    padding: 2px 20px;
 }
 footer{
     background-color: #080a1f;
