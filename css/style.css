@@ -173,6 +173,9 @@ a{
     background-color: #fff;
     color: #000;
 }
+.oc-heading{
+    font-family: 'Chakra Petch', sans-serif;
+}
 .side-pane h1, .heading-staff{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 4rem;
