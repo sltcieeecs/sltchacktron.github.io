@@ -15,6 +15,97 @@ body{
 a{
     text-decoration: none;
 }
+#staff-section{
+    padding-top: 8rem;
+}
+#staff-section h4{
+    font-family: 'Caesar Dressing', Impact;
+}
+.test-shine {
+    background-color: var(--dark-blue);
+    background-repeat: no-repeat;
+   /*  position:absolute;
+    top:0px;
+    left: 40%;
+    margin: 25px 0 25px 25px; */
+    border-radius: 5px;
+  
+    overflow: hidden;
+    display: inline-block;
+  }
+  .prp-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+  }
+  .prp-card img{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+  }
+  .img-text{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      text-align: center;
+  }
+  .img-social{
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      width: 100%;
+      font-size: 25px;
+      opacity: 0;
+      transition: 0.4s ease-out;
+  }
+  .prp-card:hover .img-social{
+      opacity: 1;
+  }
+  .img-social a{
+    color: #033f73;
+    transition: 0.4s ease-out;
+  }
+  .img-social a:hover{
+      color: #05dbf2;
+  }
+  .test-shine:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+  
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.13) 0%,
+      rgba(255, 255, 255, 0.13) 77%,
+      rgba(255, 255, 255, 0.5) 92%,
+      rgba(255, 255, 255, 0.0) 100%
+    );
+  }
+  
+  /* Hover state - trigger effect */
+  .test-shine:hover:after {
+    opacity: 1;
+    left: 130%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  
+  /* Active state */
+  .test-shine:active:after {
+    opacity: 0;
+  }
+  
+
 .profile-menu .dropdown-menu {
     right: 0;
     left: unset;
@@ -82,7 +173,7 @@ a{
     background-color: #fff;
     color: #000;
 }
-.side-pane h1{
+.side-pane h1, .heading-staff{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 4rem;
     color: #fff;
