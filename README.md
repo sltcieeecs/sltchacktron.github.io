@@ -1,4 +1,4 @@
-# Hacktron 1.0V Source Code
+# Hacktron v1.0 Source Code
 ## IEEE CS of SLTC
 Official Website for Hacktron v1.0 Game Development Competition organized by IEEE CS Chapter of Sri Lanka Technological Campus.
 
