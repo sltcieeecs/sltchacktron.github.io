@@ -181,7 +181,7 @@ a{
     font-size: 4rem;
     color: #fff;
 }
-.side-pane h4{
+.side-pane h4, .glass-card h4{
     color: #fff;
     font-family: 'Major Mono Display', Courier;
 }
