@@ -154,13 +154,15 @@ a{
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid #fff;
+	
+	
 }
 .glass-card h1{
     color: #fff;
     font-family: 'Caesar Dressing', Impact;
     font-size: 4rem;
 }
-.glass-card .round-btn{
+.side-pane2 .round-btn{
     color: #fff;
     font-family: 'Teko', Courier !important;
     font-size: 2rem;
@@ -176,15 +178,38 @@ a{
 .oc-heading{
     font-family: 'Chakra Petch', sans-serif;
 }
-.side-pane h1, .heading-staff{
+.side-pane1 {
+	background: rgba(158, 158, 158, 10%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+	border-radius: 30px;
+    border: 2px solid #fff;
+	height:390px;
+	width:120%;
+    padding:30px;
+	
+}
+.side-pane2 {
+	background: rgba(158, 158, 158, 10%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+	border-radius: 30px;
+    border: 2px solid #fff;
+	height:390px;
+	width:90%;
+    padding:30px;
+	
+}
+.side-pane2 h1,.side-pane1 h1, .heading-staff{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 4rem;
     color: #fff;
 }
-.side-pane h4, .glass-card h4{
+.side-pane2 h4,.side-pane1 h4, .glass-card h4{
     color: #fff;
     font-family: 'Major Mono Display', Courier;
 }
+
 .neon-btn{
     font-family: 'Teko', Courier;
     background-color: var(--neon-blue);
@@ -238,9 +263,30 @@ a{
     font-family: 'Teko', sans-serif;
     color: #fff;
     font-size: 1.5rem;
+	text-align:center;
     position: absolute;
     bottom: 0;
-    left: 10px;
+    left: 60px;
+    text-shadow: 0 0 8px #000;
+}
+.abs-slide2{
+    font-family: 'Teko', sans-serif;
+    color: #fff;
+    font-size: 1.5rem;
+	text-align:center;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    text-shadow: 0 0 8px #000;
+}
+.abs-slide3{
+    font-family: 'Teko', sans-serif;
+    color: #fff;
+    font-size: 1.5rem;
+	text-align:center;
+    position: absolute;
+    bottom: 0;
+    left: 110px;
     text-shadow: 0 0 8px #000;
 }
 .swiper-pagination-bullet{
@@ -307,12 +353,37 @@ a{
     box-shadow: 5px 5px 8px 3px #00000059;
 }
 .card-img-top{
+	width:90%;
+    padding-top: 30px;
+	padding-left:45px;
+	padding-right:20px;
+}
+.card-img-top2{
+	width:80%;
     padding: 10px;
+	padding-left:50px;
 }
 .card-text{
     font-family: 'Caesar Dressing', 'Courier New';
     font-size: 2rem !important;
     color: #fff;
+}
+.card-text2{
+    font-family: 'Caesar Dressing', 'Courier New';
+    font-size: 1.5rem !important;
+    color: #fff;
+}
+.card-text3{
+	font-family: 'BankGothic Md BT';
+    font-size: 1rem ;
+    color: #fff;
+	line-height:14px;
+}
+.card-text4{
+	font-family: 'Bebas Neue';
+    font-size: 1.8rem ;
+    color: #fff;
+	line-height:30px;
 }
 .time-date{
     font-size: 1.8rem;
