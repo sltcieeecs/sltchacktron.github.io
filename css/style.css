@@ -275,7 +275,7 @@ a{
     color: #fff;
     font-size: 1.5rem;
     position: absolute;
-    bottom: 10px;
+    bottom: 32%;
     left: 50%;
     transform: translateX(-50%);
     text-shadow: 0 0 8px #000;
