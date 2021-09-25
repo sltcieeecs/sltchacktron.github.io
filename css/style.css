@@ -560,6 +560,12 @@ footer a:hover{
     color: var(--neon-blue);
     text-shadow: 2px 2px 2px #fc9001;
 }
+.footer-sponsor-bottom h4{
+    font-size: 1.3rem;
+}
+.footer-sponsor-mid h3{
+    font-size: 1.5rem;
+}
 @media (max-width: 575.98px) {
     .threed h1{
         font-size: 60px;
