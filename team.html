@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="loading-scr">
+        <img src="img/Final-for-render.gif" class="img-fluid" alt="">
+    </div>
     <header>
         <nav data-aos="fade-right" class="navbar navbar-expand-lg navbar-dark bg-purple shadow-sm">
             <div class="container-fluid">
@@ -45,7 +48,7 @@
                             <a class="nav-link" aria-current="page" href="index.html#faq-section" id="fq">FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="rules.html" id="rl">Rules</a>
+                            <a class="nav-link" aria-current="page" href="index.html#rules" id="rl">Rules</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.html#sponsors" id="sp">Sponsors</a>
@@ -1261,5 +1264,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.2/swiper-bundle.min.js" integrity="sha512-Zwjw7asxDjQh1nXXmKsB/SRXUcbL+ErSIZ+p4IEhtbXyMU1NsbvjzC410GxsIQ3kCLAq0x9qDpeAATg72DFlyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="js/main.js"></script>
+    <script>
+        $( document ).ready(function() {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+            $('.loading-scr').fadeOut(400);
+        }, 1000);
+    });
+    </script>
 </body>
 </html>

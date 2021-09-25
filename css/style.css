@@ -37,6 +37,22 @@ a{
 #staff-section h4{
     font-family: 'Caesar Dressing', Impact;
 }
+.loading-scr{
+    background-color: #000;
+    position: fixed;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.loading-scr img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
 .test-shine {
     background-color: var(--dark-blue);
     background-repeat: no-repeat;
