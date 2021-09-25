@@ -367,6 +367,11 @@ a{
     font-size: 2rem !important;
     color: #fff;
 }
+.price-img-plchldr{
+    position: relative;
+    height: 500px;
+    background: url(../img/prize-placeholder.jpg) no-repeat center;
+}
 .img-abs-content{
     position: absolute;
     top: 50%;
