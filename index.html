@@ -36,10 +36,110 @@
             width: 400px;
             height: 400px;
         }
+        .abs-modal1{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(16 20 25 / 84%);
+            overflow: hidden;
+            z-index: 1000;
+        }
+        .abs-modal2{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(16 20 25 / 84%);
+            overflow: hidden;
+            z-index: 1000;
+        }
+        .abs-modal1-content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 90%;
+            width: 85%;
+            background-color: rgb(7 35 60);
+            overflow-y: scroll;
+            z-index: 1150;
+            color: #fff;
+            font-family: 'Chakra Petch', monospace;
+        }
+        .abs-modal1-content h1{
+            font-family: 'Caesar Dressing', sans-serif;
+            color: var(--neon-blue);
+        }
+        .abs-modal1-content h2{
+            font-family: 'Caesar Dressing', sans-serif;
+        }
+        .abs-modal1-content li{
+            font-size: 18px;
+        }
+        .abs-modal1-content strong{
+            color: var(--neon-blue);
+        }
+        .abs-modal1-content::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        .abs-modal1-content::-webkit-scrollbar-track {
+            background-color: #e4e4e4;
+            border-radius: 10px;
+        }
+
+        .abs-modal1-content::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-image: linear-gradient(180deg, var(--neon-blue) 0%, var(--dead-blue) 99%);
+            box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+        }
+        .modal-close{
+            position: absolute;
+            top: 5px;
+            right: 14px;
+            font-size: 40px;
+            color: var(--neon-blue);
+            z-index: 1200;
+        }
+        .modal-close i{
+            transition: .4s ease-out;
+        }
+        .modal-close:hover i{
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px var(--neon-blue);
+        }
+        @media (max-width: 1024px) {
+            .side-pane h1{
+                font-size: 3.8rem;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .count-box{
+                margin-top: 2rem;
+            }
+            .time{
+                font-size: 2.5rem;
+            }
+        }
         @media (max-width: 575.98px) {
             .swiper-slide {
                 width: 300px;
                 height: 300px;
+            }
+            .glass-card h1 {
+                font-size: 3rem;
+            }
+            .side-pane h1 {
+                font-size: 3rem;
+            }
+            .glass-card .round-btn {
+                font-size: 1.7rem;
+            }
+            .glass-card .round-btn span{
+                display: none;
             }
         }
     </style>
@@ -59,7 +159,7 @@
                             <a class="nav-link active" aria-current="page" href="#top" id="hm">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#bootcamp" id="bc">Bootcamp</a>
+                            <a class="nav-link" aria-current="page" href="bootcamps.html" id="bc">Bootcamp</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#faq-section" id="fq">FAQ</a>
@@ -93,17 +193,38 @@
                             <h1>Learn to Develop Games</h1>
                             <h4>(Open for Island-Wide Enthusiasts)</h4>
                             <div class="mt-5">
-                                <a href="https://forms.gle/1TuDJ1ZVn7q5DrfH7" class="round-btn" target="_blank">Bootcamp Registration</a>
+                                <a href="https://forms.gle/1TuDJ1ZVn7q5DrfH7" class="round-btn" target="_blank"><span>Bootcamp</span> Registration</a>
                             </div>
                             
                         </div>
                     </div>
                     <div class="col-md-5 col-11">
-                        <div class="side-pane mt-5">
+                        <div class="side-pane mt-2">
                             <h1>Develop Games to Win</h1>
                             <h4>(Inter-university competition open for undergraduates)</h4>
                             <div class="mt-4">
                                 <a href="#" class="neon-btn">Coming Soon!</a>
+                                <div class="row justify-content-around text-center mt-2">
+                                    <div class="col-lg-2 col-md-5 col-6 count-box">
+                                        <span class="time" id="days"></span><br>
+                                        <span class="date">Days</span>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-5 col-6 count-box">
+                                        <span class="time" id="hours"></span><br>
+                                        <span class="date">Hours</span>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-5 col-6 count-box">
+                                        <span class="time" id="minutes"></span><br>
+                                        <span class="date">Mins</span>
+                                    </div>
+            
+                                    <div class="col-lg-2 col-md-5 col-6 count-box">
+                                        <span class="time" id="seconds"></span><br>
+                                        <span class="date">Secs</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,34 +238,54 @@
                 </div>
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="background-image:url(https://via.placeholder.com/400?text=Bootcamp+1)">
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/1.jpg)">
                             <div class="abs-slide">
-                                <h3>Rias Gremory</h3>
-                                <h5>High School DxD</h5>
+                                <a class="join-btn" href="bootcamps.html">View More</a>
                             </div>
                         </div>
-                        <div class="swiper-slide" style="background-image:url(https://via.placeholder.com/400?text=Bootcamp+2)">
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/2.jpg)">
                             <div class="abs-slide">
-                                <h3>Kyouko Hori</h3>
-                                <h5>Horimiya</h5>
+                                <a class="join-btn" href="bootcamps.html">View More</a>
                             </div>
                         </div>
-                        <div class="swiper-slide" style="background-image:url(https://via.placeholder.com/400?text=Bootcamp+3)">
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/3.jpg)">
                             <div class="abs-slide">
-                                <h3>Raphtalia</h3>
-                                <h5>Rising of the Shield Hero</h5>
+                                <a class="join-btn" href="bootcamps.html">View More</a>
                             </div>
                         </div>
-                        <div class="swiper-slide" style="background-image:url(https://via.placeholder.com/400?text=Bootcamp+4)">
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/4.jpg)">
                             <div class="abs-slide">
-                                <h3>Touka Kirishima</h3>
-                                <h5>Tokyo Ghoul</h5>
+                                <a class="join-btn" href="bootcamps.html">View More</a>
                             </div>
                         </div>
-                        <div class="swiper-slide" style="background-image:url(https://via.placeholder.com/400?text=Bootcamp+5)">
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/5.jpg)">
                             <div class="abs-slide">
-                                <h3>Hiratsuka Sensei</h3>
-                                <h5>Oregairu</h5>
+                                <a class="join-btn" href="bootcamps.html">View More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/6.jpg)">
+                            <div class="abs-slide">
+                                <a class="join-btn" href="bootcamps.html">View More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/7.jpg)">
+                            <div class="abs-slide">
+                                <a class="join-btn" href="bootcamps.html">View More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/8.jpg)">
+                            <div class="abs-slide">
+                                <a class="join-btn" href="bootcamps.html">View More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/9.jpg)">
+                            <div class="abs-slide">
+                                <a class="join-btn" href="bootcamps.html">View More</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url(img/bootcamp/10.jpg)">
+                            <div class="abs-slide">
+                                <a class="join-btn" href="bootcamps.html">View More</a>
                             </div>
                         </div>
                     </div>
@@ -163,12 +304,16 @@
                         <h1>PRIZES</h1>
                     </div>
                     <div class="container mt-5">
-                        <div class="row justify-content-around">
+                        <img src="img/prize-placeholder.jpg" class="img-fluid" alt="">
+                        <div class="img-abs-content">
+                            <h2>To be announced...</h2>
+                        </div>
+                        <!-- <div class="row justify-content-center">
                             <div class="col-lg-3 col-md-4 col-10 my-2">
                                 <div class="card" style="width: 100%;" data-aos="flip-up" data-aos-delay="300">
                                     <img loading="lazy" src="img/cup1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                    <p class="card-text">Rs. xx,xxx</p>
+                                    <p class="card-text">75,000LKR</p>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +321,7 @@
                                 <div class="card" style="width: 100%;" data-aos="flip-up" data-aos-delay="100">
                                     <img loading="lazy" src="img/cup1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                    <p class="card-text">Rs. xx,xxx</p>
+                                    <p class="card-text">100,000LKR</p>
                                     </div>
                                 </div>
                             </div>
@@ -184,11 +329,29 @@
                                 <div class="card" style="width: 100%;" data-aos="flip-up" data-aos-delay="500">
                                     <img loading="lazy" src="img/cup1.png" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                    <p class="card-text">Rs. xx,xxx</p>
+                                    <p class="card-text">50,000LKR</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 col-md-4 col-10 my-2">
+                                <div class="card" style="width: 100%;" data-aos="flip-up" data-aos-delay="100">
+                                    <img loading="lazy" src="img/cup1.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <p class="card-text">30,000LKR</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 my-2">
+                                <div class="card" style="width: 100%;" data-aos="flip-up" data-aos-delay="300">
+                                    <img loading="lazy" src="img/cup1.png" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <p class="card-text">20,000LKR</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -201,28 +364,58 @@
                     <div class="container mt-5">
                         <div class="row justify-content-center text-start text-light" style="overflow-x: hidden;">
                             <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
-                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                                <div class="time-date">25<sup>th</sup> of September<br>2021</div>
                             </div>
                             <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
-                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                                <div class="time-content">BootCamp Registrations Opened</div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
-                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                                <div class="time-date">30<sup>th</sup> of September<br>2021</div>
                             </div>
                             <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
-                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                                <div class="time-content">Starting BootCamp</div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
-                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                                <div class="time-date">05<sup>th</sup> of October<br>2021</div>
                             </div>
                             <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
-                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                                <div class="time-content">HackTron Opening Ceremony</div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
-                                <div class="time-date">25<sup>th</sup> of September<br>2012</div>
+                                <div class="time-date">09<sup>th</sup> of October<br>2021</div>
                             </div>
                             <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
-                                <div class="time-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                                <div class="time-content">End of The BootCamp</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
+                                <div class="time-date">15<sup>th</sup> of October<br>2021</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
+                                <div class="time-content">Hackathon registrations closed<br>Proposal Submission Starts</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
+                                <div class="time-date">20<sup>th</sup> of October<br>2021</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
+                                <div class="time-content">Closing Proposal Submission<br>Semi Finals Round</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
+                                <div class="time-date">28<sup>th</sup> of October<br>2021</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
+                                <div class="time-content">Development Stage begins</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
+                                <div class="time-date">12<sup>th</sup> of November<br>2021</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
+                                <div class="time-content">Development Stage Ends</div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="100">
+                                <div class="time-date">14<sup>th</sup> of November<br>2021</div>
+                            </div>
+                            <div class="col-lg-9 col-md-8 col-10 py-5" style="position: relative;" data-aos="fade-left" data-aos-delay="200">
+                                <div class="time-content">HackTron v1.0 Grand Final</div>
                             </div>
                         </div>
                     </div>
@@ -233,40 +426,32 @@
     <section id="rules">
         <div class="container">
             <div class="row justify-content-around">
-                <div class="col-lg-3 col-md-5 col-10 pe-5" data-aos="fade-up" data-aos-delay="100">
-                    <div class="colored">
-                        <i class="fas fa-file-archive"></i>
-                        <h3>Lorem, ipsum.</h3>
-                    </div>
-                    <div class="con-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-5 col-10 pe-5" data-aos="fade-up" data-aos-delay="200">
-                    <div class="colored">
-                        <i class="fas fa-file-archive"></i>
-                        <h3>Lorem, ipsum.</h3>
-                    </div>
-                    <div class="con-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
+                <div class="col-lg-5 col-md-6 col-10 mb-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card py-4">
+                        <div class="colored text-center">
+                            <i class="fas fa-campground"></i>
+                            <h3>Bootcamp Series</h3>
+                        </div>
+                        <div class="con-text">
+                            <p>Rules & Guidelines</p>
+                            <div class="mt-4 text-center">
+                                <a id="modal1-open" class="neon-btn">Click Here</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-5 col-10 pe-5" data-aos="fade-up" data-aos-delay="300">
-                    <div class="colored">
-                        <i class="fas fa-file-archive"></i>
-                        <h3>Lorem, ipsum.</h3>
-                    </div>
-                    <div class="con-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-5 col-10 pe-5" data-aos="fade-up" data-aos-delay="400">
-                    <div class="colored">
-                        <i class="fas fa-file-archive"></i>
-                        <h3>Lorem, ipsum.</h3>
-                    </div>
-                    <div class="con-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia tempore quod odio ad aut necessitatibus.</p>
+                <div class="col-lg-5 col-md-6 col-10 mb-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card py-4">
+                        <div class="colored text-center">
+                            <i class="fas fa-crown"></i>
+                            <h3>Game Dev Competition</h3>
+                        </div>
+                        <div class="con-text">
+                            <p>Rules & Guidelines</p>
+                            <div class="mt-4 text-center">
+                                <a id="modal2-open" class="neon-btn">Click Here</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,11 +462,12 @@
             <h1>FAQ</h1>
         </div>
         <div class="container mt-5">
+            <h2 class="faq-sec-title">GENERAL</h2>
             <div class="accordion" id="accordionExample" data-aos="fade-up" data-aos-delay="100">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            01) HOW MANY CHAPTERS ARE THERE IN THE HACKATHON?
+                            01) HOW MANY CHAPTERS ARE THERE IN THIS PROJECT?
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -292,197 +478,230 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        02) DO I NEED TO PAY?
-                    </button>
-                  </h2>
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            02) WHO IS ELIGIBLE TO PARTICIPATE?
+                        </button>
+                    </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>No.</strong> It's completely <strong>free</strong>.
+                            Bootcamp is open island-wide.<br>
+Only University Students are eligible to participate in the Hackathon.
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            03) WHO ARE THE ORGANIZERS OF THIS PROGRAMME?
+                            03) DO I NEED TO PAY?
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>Organized by the IEEE Computer Society Student Branch Chapter of SLTC</strong>
+                            NO, you don't
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            04) HOW  CAN I JOIN BOOTCAMP AND HACKATHON?
+                            04) WHO ARE THE ORGANIZERS OF THIS PROGRAMME?
                         </button>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>REGISTER FROM GIVEN LINK:</strong>
+                            Organized by the IEEE Computer Society Student Branch Chapter of SLTC
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            05) PROJECT DURATION?
+                            05) HOW  CAN I JOIN BOOTCAMP AND HACKATHON?
                         </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>- Project is conducted virtually for a time period of 8 weeks.<br>
-                                - Bootcamp- 10 days<br>
-                                - Hackathon-6 weeks</strong>
+                            <a href="#top">Click Here</a>
                         </div>
                     </div>
                 </div>
-                
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            06) WHAT CAN WE LEARN FROM THIS BOOTCAMP?
+                            06) EVENT DURATION?
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>- Game Programming Lessons<br>
-                                - Concept Art Designing<br>
-                                - 3D Designing Lessons<br>
-                                - Essential of Game Designing<br>
-                                - Learn at your own space<br>
-                                - Get some Gaming knowledge<br>
-                                - Evaluate different approaches to writing and implementing interactive music for video games</strong>
+                            Project is conducted virtually for a time period of 6 weeks.
                         </div>
                     </div>
                 </div>
-
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h2 class="faq-sec-title">BOOTCAMP</h2>
+            <div class="accordion" id="accordionExample1" data-aos="fade-up" data-aos-delay="100">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSeven">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            07) DO I NEED A TEAM TO PARTICIPATE AND HOW MANY MEMBERS?
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                            01) WHAT CAN WE LEARN FROM THIS BOOTCAMP?
                         </button>
                     </h2>
-                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                    <div id="collapseSeven" class="accordion-collapse collapse show" aria-labelledby="headingSeven" data-bs-parent="#accordionExample1">
                         <div class="accordion-body">
-                            <strong>A team consisting 3-5 members is needed.One member should be in 1 team only.</strong>
+                            <ul>
+                                <li>Game Programming Lessons</li>
+                                <li>Concept Art Designing</li>
+                                <li>3D Designing Lessons</li>
+                                <li>Essential of Game Designing</li>
+                                <li>Learn at your own space</li>
+                                <li>Get some Gaming knowledge</li>
+                                <li>Evaluate different approaches to writing and implementing interactive music for video games</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingEight">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            08) WHAT ARE THE 4 TASKS GIVEN?
+                            02) DO I NEED A TEAM TO PARTICIPATE AND HOW MANY MEMBERS?
                         </button>
                     </h2>
-                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample1">
                         <div class="accordion-body">
-                            <strong>- Programming task<br>
-                                - Concept Art task<br>
-                                - 3D Designing task<br>
-                                - 3D Animation task</strong>
+                            NO, you don't need a team to participate. you can participate as a team or individually
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingNine">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                            09) HOW MANY ROUNDS ARE THERE IN THE HACKATHON?
+                            03) WHAT ARE THE TASKS GIVEN?
                         </button>
                     </h2>
-                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample1">
                         <div class="accordion-body">
-                            <strong>3 main rounds</strong>
+                            <ul>
+                                <li>Terrain Designing Task</li>
+                                <li>Scripting Task</li>
+                                <li>3D Graphic Designing Task</li>
+                                <li>Concept Art/2D Designing Task</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                            10) WHO ARE ELIGIBLE TO PARTICIPATE?
+                            04) DO I NEED PREVIOUS GAME DEVELOPMENT KNOWLEDGE TO JOIN?
                         </button>
                     </h2>
-                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample1">
                         <div class="accordion-body">
-                            <strong>- Only University Students are eligible to participate in the Hackathon.<br>
-                                - Bootcamp is open island- wide.</strong>
+                            No this is for absolute beginners
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingEleven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-                            11) I REGISTERED BUT DIDN'T GET A CONFIRMATION EMAIL!
+                            05) WHAT GAME ENGINE IS USE TO DEVELOP GAMES IN BOOTCAMP?
                         </button>
                     </h2>
-                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample1">
                         <div class="accordion-body">
-                            <strong>Email:<br>
-                                Contact:</strong>
+                            Unity Engine
                         </div>
                     </div>
                 </div>
-
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h2 class="faq-sec-title">HACKATHON</h2>
+            <div class="accordion" id="accordionExample2" data-aos="fade-up" data-aos-delay="100">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwelve">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
-                            12) WHAT GAME ENGINE IS USE TO DEVELOP GAMES?
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+                            01) HOW MANY ROUNDS ARE THERE IN THE HACKATHON?
                         </button>
                     </h2>
-                    <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+                    <div id="collapseTwelve" class="accordion-collapse collapse show" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample2">
                         <div class="accordion-body">
-                            <strong>Unreal Engine</strong>
+                            <ul>
+                                <li>First Round - Game development ideas will be welcomed from the participants</li>
+                                <li>Semi-Final Round - All teams will be invited to gather their ideas as a proposal and to present them in front of a judging board</li>
+                                <li>Final Round - Each team will be guided by giving three mentoring sessions and mentors to develop their game development ideas</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThirteen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
-                            13) DO I NEED PREVIOUS GAME DEVELOPMENT KNOWLEDGE TO JOIN?
+                            02) I REGISTERED BUT DIDN'T GET A CONFIRMATION EMAIL!
                         </button>
                     </h2>
-                    <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+                    <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample2">
                         <div class="accordion-body">
-                            <strong>No this is for absolute beginners.</strong>
+                            Email:<a href="mailto:Hacktron@sltc.ac.lk">Hacktron@sltc.ac.lk</a><br>
+Contact: +94 70 325 8006 (Wageesha)
                         </div>
                     </div>
                 </div>
-
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFourteen">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
-                            14) WHAT ARE THE OBJECTIVES OF ORGANIZING HACKTRON?
+                            03)HOW MANY MEMBERS FOR A TEAM?
                         </button>
                     </h2>
-                    <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+                    <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample2">
                         <div class="accordion-body">
-                            <strong>- Widening the game development community in Sri Lanka.<br>
-                                - Encouraging the young graduates who are keen in the game development industry.<br>
-                                - Giving an opportunity for undergraduates to step into the industry.<br>
-                                - Supporting game development companies by producing talented game developers.<br>
-                                - Creating a collaborative space to make a community in the game development industry</strong>
+                            Minimum 3 to maximum 5 members
                         </div>
                     </div>
                 </div>
-
-                <!--repeatable block end-->
-                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFifteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                            04) CAN ONE PERSON BE IN TWO TEAMS? 
+                        </button>
+                    </h2>
+                    <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample2">
+                        <div class="accordion-body">
+                            NO, if you do so, both teams will be disqualified
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSixteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                            05) SHOULD ALL TEAM MEMBERS BE AT THE SAME UNIVERSITY?
+                        </button>
+                    </h2>
+                    <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#accordionExample2">
+                        <div class="accordion-body">
+                            Yes!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeventeen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+                            06) WHAT GAME ENGINE IS USE TO DEVELOP GAMES IN HACKATHON?
+                        </button>
+                    </h2>
+                    <div id="collapseSeventeen" class="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#accordionExample2">
+                        <div class="accordion-body">
+                            Any engine can be used.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section id="ads-section" class="mt-5">
+    <section id="ads-section" class="mt-5" hidden>
         <div class="ads-swiper">
             <div class="swiper-wrapper ads-swiper-wrapper">
                 <div class="swiper-slide ads-swiper-slide"><img loading="lazy" class="img-fluid" src="https://via.placeholder.com/970x250/c0c0c0?text=Banner+1" alt=""></div>
@@ -491,7 +710,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-    <section class="motivation mt-5 py-4">
+    <section class="motivation mt-5 py-4" hidden>
         <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -531,29 +750,55 @@
             <a href="#" class="neon-outline-btn">Register Now</a>
         </div>
     </section>
-    <section id="sponsors" class="sponsor-section">
+    <section id="sponsors" class="sponsor-section py-5">
         <div class="container text-center">
-            <h1 hidden><span style="color: var(--neon-blue);">Powered</span> By</h1>
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-4 col-md-6 col-10">
+            <h1><span style="color: var(--neon-blue);">Powered</span> By</h1>
+            <div class="row justify-content-around mt-5 mb-3">
+                <div class="col-lg-3 col-md-5 col-10">
+                    <div class="sponsor-card">
+                        <img loading="lazy" class="img-fluid" src="img/Sponsors/99x-footer-icon.png" data-aos="flip-up" data-aos-delay="100" alt="">
+                        <h2>Platinum</h2>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-3 col-md-5 col-10">
                     <div class="sponsor-card">
                         <img loading="lazy" class="img-fluid" src="https://via.placeholder.com/350/E5E4E2?text=Platinum" data-aos="flip-up" data-aos-delay="100" alt="">
                         <h2>Platinum</h2>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-around mt-3 mb-5">
-                <div class="col-lg-4 col-md-6 col-10 my-1">
+                <div class="col-lg-3 col-md-5 col-10">
                     <div class="sponsor-card">
-                        <img loading="lazy" class="img-fluid" src="https://via.placeholder.com/300/FFD700?text=Gold" data-aos="flip-up" data-aos-delay="100" alt="">
-                        <h2>Golden</h2>
+                        <img loading="lazy" class="img-fluid" src="https://via.placeholder.com/350/E5E4E2?text=Platinum" data-aos="flip-up" data-aos-delay="100" alt="">
+                        <h2>Platinum</h2>
+                    </div>
+                </div> -->
+                <div class="col-lg-3 col-md-5 col-10">
+                    <div class="sponsor-card">
+                        <img loading="lazy" class="img-fluid" src="img/Sponsors/virtusa-footer-icon.png" data-aos="flip-up" data-aos-delay="100" alt="">
+                        <h2>Bronze</h2>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-10">
-                    <div class="sponsor-card">
-                        <img loading="lazy" class="img-fluid" src="https://via.placeholder.com/300/C0C0C0?text=Silver" data-aos="flip-up" data-aos-delay="100" alt="">
-                        <h2>Silver</h2>
-                    </div>
+            </div>
+            <div class="row justify-content-center mt-5 text-center ps-2">
+                <h3>Mentoring & Knowledge Partners</h3>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                    <img src="img/Sponsors/Prodigi-light-icon.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                    <img src="img/Sponsors/Heladev-icon.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                    <img src="img/Sponsors/Ram-Studio-icon.jpg.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5 text-center ps-2">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                    <h4>Online Event Partner</h4>
+                    <img src="img/Sponsors/Hackathons.lk-light-icon.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                    <h4>Digital Media Partner</h4>
+                    <img src="img/Sponsors/arteculate-light-icon.png" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -563,20 +808,63 @@
         <div class="container py-5">
             <div class="row justify-content-around">
                 <div class="col-lg-5 col-md-4 col-10 text-center pb-3">
-                    <img loading="lazy" src="img/HackTron-logo.png" height="50px" alt="">
+                    <img loading="lazy" class="mt-3" src="img/HackTron-logo.png" height="60px" alt="">
                 </div>
                 <div class="col-lg-7 col-md-8 col-12">
                     <div class="row">
-                        <div class="col-4 text-center"><h5 style="color: var(--neon-blue);">Hacktron 1.0V</h5></div>
-                        <div class="col-4 text-center"><h5>About Us</h5></div>
+                        <div class="col-12">
+                            <div class="text-center">
+                                <h5>Contact Us</h5>
+                            </div>
+                        </div>
                         <div class="col-4 text-center">
-                            <h5>Follow Us</h5>
-                            <ul class="ps-0">
-                                <li>Facebook</li>
-                                <li>Twitter</li>
-                                <li>LinkedIn</li>
-                                <li>Instagram</li>
-                            </ul>
+                            <p>Nawodya Ishan<br>
+                                <i>(Chapter Chairman)</i><br>
+                                +94 71 200 6388
+                            </p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <p>
+                                Saketha Pulasthi<br>
+<i>(Project Chairman)</i><br>
++94 71 165 1919
+                            </p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <p>
+                                Wageesha Aluthgama<br>
+<i>(Event Coordinator)</i><br>
++94 70 325 8006
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="row justify-content-center text-center pt-5">
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="www.facebook.com/sltcieeecs" target="_blank"><i class="fab fa-facebook facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="https://youtube.com/channel/UCrsJlEY4bydXLVdNn7SV4EA" target="_blank"><i class="fab fa-youtube youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="www.instagram.com/sltcieeecs" target="_blank"><i class="fab fa-instagram instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="https://www.linkedin.com/company/sltcieeecs" target="_blank"><i class="fab fa-linkedin linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="https://twitter.com/sltcieeecs?s=09" target="_blank"><i class="fab fa-twitter twitter"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -589,6 +877,105 @@
     </footer>
     <div id="typed-strings">
         <h1>path to be a game dev</h1>
+    </div>
+    <div class="abs-modal1" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center">
+                    <h1>Hacktron Bootcamp</h1>
+                </div>
+                <div class="text-left">
+                    <h2>General:</h2>
+                    <ul>
+                        <li>You should have to follow all the given instructions and guidelines.</li>
+                        <li>It is appreciated if you can attend the sessions 10 minutes before.</li>
+                        <li>Participants can ask questions from the resource person through the Slido platform.</li>
+                        <li>Kindly remember that harassment, racism or inappropriate behaviour is not allowed during all the sessions.</li>
+                        <li>The decision of the judge panel is the final decision. The decisions will be strictly in accordance to the rules and regulations of the Bootcamp.</li>
+                    </ul>
+                </div>
+                <div class="text-left">
+                    <h2>Bootcamp Contest:</h2>
+                    <ul>
+                        <li>Anyone who likes to do Game Development can participate in this Bootcamp.</li>
+                        <li><strong>There are four tasks in this boot camp,
+                            <ol>
+                                <li>Scripting Task</li>
+                                <li>Concept Art & 2D Gaming Task</li>
+                                <li>3D Modeling and Animation Task</li>
+                                <li>Terrain Designing Task</li>
+                            </ol></strong>
+                        </li>
+                        <li>All the above 4 tasks will be open from the <strong>4th of October</strong> and the deadline for the completion of the tasks will be on the <strong>20th of October, midnight.</strong></li>
+                        <li>You can complete all the four tasks or any number of tasks as you prefer.</li>
+                        <li>Participants must <strong>score 30%</strong> or more from any of these tasks to be eligible to obtain the certificates.</li>
+                        <li>The tasks will be given with regard to the content delivered throughout the series of sessions in the Bootcamp.</li>
+                        <li><strong>Cash prizes,Certificates</strong> and <strong>Scholarships</strong> are given to the participants who scored the highest marks.</li>
+                        <li>Each task should be an individual submission and must be your own work.</li>
+                        <li><strong>Plagiarism is strictly prohibited;</strong> if found certificates will not be provided.</li>
+                    </ul>
+                </div>
+                <div class="row justify-content-center text-center mt-5">
+                    <div class="col-md-6 col-10">
+                        <a href="#pdf" class="neon-btn" target="_blank">Download PDF</a>
+                    </div>
+                    <div class="col-md-6 col-10">
+                        <a class="neon-btn" id="modal1-close-in">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="modal1-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <div class="abs-modal2" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center">
+                    <h1>Hacktron Hackathon</h1>
+                </div>
+                <div class="text-left">
+                    <h2>General:</h2>
+                    <ul>
+                        <li>You should have to follow all the given instructions and guidelines.</li>
+                        <li>Kindly remember that harassment, racism or inappropriate behaviour is not allowed during all the sessions.</li>
+                        <li>The decision of the judge panel is the final decision. The decisions will be strictly in accordance to the rules and regulations of the Hackathon.</li>
+                    </ul>
+                </div>
+                <div class="text-left">
+                    <h2>Hackathon:</h2>
+                    <ul>
+                        <li>Students of any higher educational institute are eligible to participate in the Hackathon.</li>
+                        <li>The team should consist of 2 to 5 members. One person can only be on one team. If the judge panel identifies that someone is in two or more teams, all the contestants on the team will be disqualified.</li>
+                        <li>It is compulsory for all the team members to be in the same university.</li>
+                        <li>In the first round, all the teams should submit their ideas according to the given structure (Participants will be informed about it via email).</li>
+                        <li>In the semi-finals, the selected thirty teams must present their ideas through a proposal and present to a judging panel (Participants will be informed about the structures via an email).</li>
+                        <li>All the ten teams will be given two weeks to implement their game (If any team needs more time to implement, they can begin their implementation once submitting the proposal).</li>
+                        <li>At the finals, the selected ten teams should demonstrate their game in front of a judge board (time for each team for demonstration - 10 min, Q&A - 5 min) and winners will be announced and awarded at the end of the session.</li>
+                        <li>It is compulsory that all implementations should be their own work.</li>
+                        <li>The implemented game can be 2D or 3D. Teams can use different effects and designs as their preferences.</li>
+                        <li>Competitors are allowed to use libraries, frameworks, or open-source codes to make their projects. If the judge panel identified that there is any copyright issue all the contestants of the team will be disqualified.</li>
+                        <li>To develop your game idea, you can use any kind of game engine platform.</li>
+                        <li>When you submit your project make sure to submit your project file.</li>
+                        <li>Each selected ten teams will be provided a mentor from the industry for their guidance.</li>
+                        <li>Participants must treat all team members, competitors, judges, coaches, and volunteers with respect and courtesy while abiding by the Decoded code of conduct.</li>
+                        <li>The decision on the winners of the competition will be made by the judges and it will be the final decision.</li>
+                    </ul>
+                </div>
+                <div class="row justify-content-center text-center mt-5">
+                    <div class="col-md-6 col-10">
+                        <a href="#pdf" class="neon-btn" target="_blank">Download PDF</a>
+                    </div>
+                    <div class="col-md-6 col-10">
+                        <a class="neon-btn" id="modal2-close-in">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="modal2-close">
+            <i class='bx bx-x'></i>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>

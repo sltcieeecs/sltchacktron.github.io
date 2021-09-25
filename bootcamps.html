@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.2/swiper-bundle.css" integrity="sha512-fueOAoX4ndEk7eR9OniEO24QSsXT9pSPcUE4vp4nfc7WxNGu5fi7j/JAXBF4Xa7ePYq5UO1JcwFVKfsoEkSRpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/splide.min.css">
+    <link rel="stylesheet" href="css/splide-skyblue.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
         html,body {
@@ -66,6 +68,13 @@
             -webkit-align-items: center;
             align-items: center;
         }
+        .splide__slide img{
+            cursor: pointer;
+            transition: .4s ease-out;
+        }
+        .splide__slide img:hover{
+            box-shadow: 2px 2px 8px var(--neon-blue);
+        }
         .footer-btn{
             background-color: var(--bg-color);
         }
@@ -107,10 +116,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html" id="hm">Home</a>
+                            <a class="nav-link" aria-current="page" href="index.html" id="hm">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="bootcamps.html" id="bc">Bootcamp</a>
+                            <a class="nav-link active" aria-current="page" href="bootcamps.html" id="bc">Bootcamp</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.html#faq-section" id="fq">FAQ</a>
@@ -134,8 +143,56 @@
     </header>
     <div class="swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">
+                <div class="container-fluid">
+                    <div id="splide" class="splide mx-auto">
+                        <div class="splide__track py-4">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/1.jpg" class="img-fluid" id="bc01" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/2.jpg" class="img-fluid" id="bc02" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/3.jpg" class="img-fluid" id="bc03" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/4.jpg" class="img-fluid" id="bc04" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/5.jpg" class="img-fluid" id="bc05" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/6.jpg" class="img-fluid" id="bc06" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/7.jpg" class="img-fluid" id="bc07" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/8.jpg" class="img-fluid" id="bc08" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/9.jpg" class="img-fluid" id="bc09" alt="">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="img/bootcamp/10.jpg" class="img-fluid" id="bc10" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 01</h1>
+                            <h2></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="swiper-slide">Slide 3</div>
             <div class="swiper-slide">Slide 4</div>
             <div class="swiper-slide">Slide 5</div>
@@ -143,6 +200,7 @@
             <div class="swiper-slide">Slide 7</div>
             <div class="swiper-slide">Slide 8</div>
             <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div>
             <div class="swiper-slide">Slide 10</div>
         </div>
         <!-- Add Pagination -->
@@ -155,20 +213,67 @@
         <div class="container py-5">
             <div class="row justify-content-around">
                 <div class="col-lg-5 col-md-4 col-10 text-center pb-3">
-                    <img loading="lazy" src="img/HackTron-logo.png" height="50px" alt="">
+                    <img loading="lazy" src="img/HackTron-logo.png" height="60px" alt="">
                 </div>
                 <div class="col-lg-7 col-md-8 col-12">
                     <div class="row">
-                        <div class="col-4 text-center"><h5 style="color: var(--neon-blue);">Hacktron 1.0V</h5></div>
-                        <div class="col-4 text-center"><h5>About Us</h5></div>
-                        <div class="col-4 text-center">
-                            <h5>Follow Us</h5>
-                            <ul class="ps-0">
-                                <li>Facebook</li>
-                                <li>Twitter</li>
-                                <li>LinkedIn</li>
-                                <li>Instagram</li>
-                            </ul>
+                        <div class="col-lg-7 col-md-8 col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <h5>Contact Us</h5>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>Nawodya Ishan<br>
+                                        <i>(Chapter Chairman)</i><br>
+                                        +94 71 200 6388
+                                    </p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>
+                                        Saketha Pulasthi<br>
+        <i>(Project Chairman)</i><br>
+        +94 71 165 1919
+                                    </p>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <p>
+                                        Wageesha Aluthgama<br>
+        <i>(Event Coordinator)</i><br>
+        +94 70 325 8006
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="row justify-content-center text-center pt-5">
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                                    <div class="social-footer-card">
+                                        <a href="www.facebook.com/sltcieeecs" target="_blank"><i class="fab fa-facebook facebook"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                                    <div class="social-footer-card">
+                                        <a href="https://youtube.com/channel/UCrsJlEY4bydXLVdNn7SV4EA" target="_blank"><i class="fab fa-youtube youtube"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                                    <div class="social-footer-card">
+                                        <a href="www.instagram.com/sltcieeecs" target="_blank"><i class="fab fa-instagram instagram"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                                    <div class="social-footer-card">
+                                        <a href="https://www.linkedin.com/company/sltcieeecs" target="_blank"><i class="fab fa-linkedin linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                                    <div class="social-footer-card">
+                                        <a href="https://twitter.com/sltcieeecs?s=09" target="_blank"><i class="fab fa-twitter twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,6 +289,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.2/swiper-bundle.min.js" integrity="sha512-Zwjw7asxDjQh1nXXmKsB/SRXUcbL+ErSIZ+p4IEhtbXyMU1NsbvjzC410GxsIQ3kCLAq0x9qDpeAATg72DFlyg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/splide.min.js"></script>
     <script type="module">
         AOS.init();
         var swiper = new Swiper('.swiper', {
@@ -196,8 +302,60 @@
                 clickable: true,
             },
         });
-
-        
+        new Splide( '#splide', {
+            focus    : 'center',
+            perPage  : 4,
+            trimSpace: false,
+            width: '95%',
+            type: 'loop',
+            rewind: true,
+            start: 0,
+            autoplay: true,
+            interval: 3000,
+            pauseOnHover: true,
+            pagination: false,
+        } ).mount();
+        /* new Splide( '.splide', {
+            type   : 'loop',
+            perPage: 3,
+            rewind: true,
+            width: '95%',
+            start: 1,
+            autoplay: true,
+            interval: 3000,
+            pauseOnHover: true,
+            drag: true
+        }).mount(); */
+        $('#bc01').click(swiper,function(){
+            swiper.slideTo(1);
+        });
+        $('#bc02').click(swiper,function(){
+            swiper.slideTo(2);
+        });
+        $('#bc03').click(swiper,function(){
+            swiper.slideTo(3);
+        });
+        $('#bc04').click(swiper,function(){
+            swiper.slideTo(4);
+        });
+        $('#bc05').click(swiper,function(){
+            swiper.slideTo(5);
+        });
+        $('#bc06').click(swiper,function(){
+            swiper.slideTo(6);
+        });
+        $('#bc07').click(swiper,function(){
+            swiper.slideTo(7);
+        });
+        $('#bc08').click(swiper,function(){
+            swiper.slideTo(8);
+        });
+        $('#bc09').click(swiper,function(){
+            swiper.slideTo(9);
+        });
+        $('#bc10').click(swiper,function(){
+            swiper.slideTo(10);
+        });
     </script>
     <script>
         function changeState(){
