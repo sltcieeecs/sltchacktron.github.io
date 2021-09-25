@@ -485,6 +485,9 @@ a{
     font-family: 'Major Mono Display';
     color: #fff;
 }
+#sponsors{
+    padding-top: 4rem;
+}
 .sponsor-section h1{
     font-family: 'Caesar Dressing', 'Courier New';
     font-size: 3rem;
