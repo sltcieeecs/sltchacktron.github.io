@@ -1,6 +1,6 @@
-<script>
+<!-- <script>
     window.location.href = "under-construction.html";
-</script>
+</script> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,12 +68,57 @@
             -webkit-align-items: center;
             align-items: center;
         }
+        .swiper-slide h1{
+            font-family: 'Chakra Petch', monospace;
+        }
         .splide__slide img{
             cursor: pointer;
-            transition: .4s ease-out;
+            transition: .3s ease-out;
+            position: relative;
+            filter: grayscale(.8);
+        }
+        .splide__list .is-active img{
+            filter: grayscale(0) !important;
+        }
+        .splide__slide button{
+            width: auto;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .splide__slide button:hover ~ img{
+            filter: brightness(.5);
         }
         .splide__slide img:hover{
             box-shadow: 2px 2px 8px var(--neon-blue);
+        }
+        .splide__arrow {
+            background: #02030d;
+            height: 100%;
+            border-radius: 0;
+        }
+        .splide__arrow--prev{
+            left: 0px;
+        }
+        .splide__arrow--next {
+            right: 0px;
+        }
+        .splide__pagination {
+            bottom: 0px;
+        }
+        .splide-btn{
+            border: none;
+            border-radius: 0px;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.1);
+            padding: .5rem 1rem;
+            font-family: 'Chakra Petch', Courier, monospace;
+        }
+        .splide-btn:hover{
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.6);
+        }
+        .bx-fade-down{
+            font-family: 'Teko', sans-serif;
         }
         .footer-btn{
             background-color: var(--bg-color);
@@ -97,11 +142,67 @@
             transform: translate(-50%,0);
         }
         .close-up{
-            transform: translate(-50%,86%);
+            transform: translate(-50%,89%);
         }
         .arrow-rotate{
             transform: rotateZ(180deg);
             border-radius: 0 0 10px 10px !important;
+        }
+        @media (max-width: 767.98px) {
+            #lq9331{
+                display: none;
+            }
+        }
+        .abs-modal-boot{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(16 20 25 / 84%);
+            overflow: hidden;
+            z-index: 1000;
+        }
+        .abs-modal1-content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 90%;
+            width: 85%;
+            background-color: rgb(7 35 60);
+            overflow-y: scroll;
+            z-index: 1150;
+            color: #fff;
+            font-family: 'Chakra Petch', monospace;
+        }
+        .abs-modal1-content h1{
+            font-family: 'Caesar Dressing', sans-serif;
+            color: var(--neon-blue);
+        }
+        .abs-modal1-content h2{
+            font-family: 'Caesar Dressing', sans-serif;
+        }
+        .abs-modal1-content li{
+            font-size: 18px;
+        }
+        .abs-modal1-content strong{
+            color: var(--neon-blue);
+        }
+        .modal-close{
+            position: absolute;
+            top: 5px;
+            right: 14px;
+            font-size: 40px;
+            color: var(--neon-blue);
+            z-index: 1200;
+        }
+        .modal-close i{
+            transition: .4s ease-out;
+        }
+        .modal-close:hover i{
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px var(--neon-blue);
         }
     </style>
 </head>
@@ -144,42 +245,56 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="container-fluid">
+                <div class="container-xl">
                     <div id="splide" class="splide mx-auto">
                         <div class="splide__track py-4">
                             <ul class="splide__list">
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/1.jpg" class="img-fluid" id="bc01" alt="">
+                                    <img src="img/bootcamp/1.jpg" class="img-fluid" alt="">
+                                    <button id="bc01" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/2.jpg" class="img-fluid" id="bc02" alt="">
+                                    <img src="img/bootcamp/2.jpg" class="img-fluid" alt="">
+                                    <button id="bc02" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/3.jpg" class="img-fluid" id="bc03" alt="">
+                                    <img src="img/bootcamp/3.jpg" class="img-fluid" alt="">
+                                    <button id="bc03" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/4.jpg" class="img-fluid" id="bc04" alt="">
+                                    <img src="img/bootcamp/4.jpg" class="img-fluid" alt="">
+                                    <button id="bc04" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/5.jpg" class="img-fluid" id="bc05" alt="">
+                                    <img src="img/bootcamp/5.jpg" class="img-fluid" alt="">
+                                    <button id="bc05" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/6.jpg" class="img-fluid" id="bc06" alt="">
+                                    <img src="img/bootcamp/6.jpg" class="img-fluid" alt="">
+                                    <button id="bc06" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/7.jpg" class="img-fluid" id="bc07" alt="">
+                                    <img src="img/bootcamp/7.jpg" class="img-fluid" alt="">
+                                    <button id="bc07" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/8.jpg" class="img-fluid" id="bc08" alt="">
+                                    <img src="img/bootcamp/8.jpg" class="img-fluid" alt="">
+                                    <button id="bc08" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/9.jpg" class="img-fluid" id="bc09" alt="">
+                                    <img src="img/bootcamp/9.jpg" class="img-fluid" alt="">
+                                    <button id="bc09" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="img/bootcamp/10.jpg" class="img-fluid" id="bc10" alt="">
+                                    <img src="img/bootcamp/10.jpg" class="img-fluid" alt="">
+                                    <button id="bc10" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="text-center bx-fade-down mt-2" id="scrl-down">
+                        <h2 style="cursor: pointer;">Scroll Down</h2>
+                        <h1 style="cursor: pointer;"><i class='bx bxs-chevrons-down'></i></h1>
                     </div>
                 </div>
             </div>
@@ -188,20 +303,221 @@
                     <div class="row justify-content-center">
                         <div class="col-12">
                             <h1>Boocamp Day 01</h1>
-                            <h2></h2>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/1.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day1-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
-            <div class="swiper-slide">Slide 10</div>
-            <div class="swiper-slide">Slide 10</div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 02</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/2.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day2-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 03</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/3.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day3-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 04</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/4.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day4-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 05</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/5.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day5-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 06</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/6.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day6-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 07</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/7.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day7-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 08</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/8.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day8-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 09</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/9.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day9-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <h1>Boocamp Day 10</h1>
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-10 mt-3">
+                            <div class="bootcamp-day-img text-center">
+                                <img src="img/bootcamp/10.jpg" class="img-fluid" alt="">
+                                <div class="row justify-content-center mt-2">
+                                    <div class="col-md-6 col-12 mb-2">
+                                        <a class="neon-btn" id="day10-open">View Syllabus</a>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <a class="neon-btn" href="#" target="_blank">Youtube Session <i class='bx bxl-youtube' style='color:#ff0000'  ></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -217,62 +533,56 @@
                 </div>
                 <div class="col-lg-7 col-md-8 col-12">
                     <div class="row">
-                        <div class="col-lg-7 col-md-8 col-12">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="text-center">
-                                        <h5>Contact Us</h5>
-                                    </div>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <p>Nawodya Ishan<br>
-                                        <i>(Chapter Chairman)</i><br>
-                                        +94 71 200 6388
-                                    </p>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <p>
-                                        Saketha Pulasthi<br>
-        <i>(Project Chairman)</i><br>
-        +94 71 165 1919
-                                    </p>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <p>
-                                        Wageesha Aluthgama<br>
-        <i>(Event Coordinator)</i><br>
-        +94 70 325 8006
-                                    </p>
-                                </div>
+                        <div class="col-12">
+                            <div class="text-center">
+                                <h5>Contact Us</h5>
                             </div>
                         </div>
-                        <div class="col-10">
-                            <div class="row justify-content-center text-center pt-5">
-                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                                    <div class="social-footer-card">
-                                        <a href="www.facebook.com/sltcieeecs" target="_blank"><i class="fab fa-facebook facebook"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                                    <div class="social-footer-card">
-                                        <a href="https://youtube.com/channel/UCrsJlEY4bydXLVdNn7SV4EA" target="_blank"><i class="fab fa-youtube youtube"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                                    <div class="social-footer-card">
-                                        <a href="www.instagram.com/sltcieeecs" target="_blank"><i class="fab fa-instagram instagram"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                                    <div class="social-footer-card">
-                                        <a href="https://www.linkedin.com/company/sltcieeecs" target="_blank"><i class="fab fa-linkedin linkedin"></i></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-4 col-6">
-                                    <div class="social-footer-card">
-                                        <a href="https://twitter.com/sltcieeecs?s=09" target="_blank"><i class="fab fa-twitter twitter"></i></a>
-                                    </div>
-                                </div>
+                        <div class="col-4 text-center">
+                            <p>Nawodya Ishan<br>
+                                <i>(Chapter Chairman)</i><br>
+                                +94 71 200 6388
+                            </p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <p>Saketha Pulasthi<br>
+                                <i>(Project Chairman)</i><br>
+                                +94 71 165 1919
+                            </p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <p>Wageesha Aluthgama<br>
+                                <i>(Event Coordinator)</i><br>
+                                +94 70 325 8006
+                            </p>
+                        </div>
+                    </div>   
+                </div>
+                <div class="col-10" id="lq9331">
+                    <div class="row justify-content-center text-center pt-5">
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="www.facebook.com/sltcieeecs" target="_blank"><i class="fab fa-facebook facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="https://youtube.com/channel/UCrsJlEY4bydXLVdNn7SV4EA" target="_blank"><i class="fab fa-youtube youtube"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="www.instagram.com/sltcieeecs" target="_blank"><i class="fab fa-instagram instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="https://www.linkedin.com/company/sltcieeecs" target="_blank"><i class="fab fa-linkedin linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+                            <div class="social-footer-card">
+                                <a href="https://twitter.com/sltcieeecs?s=09" target="_blank"><i class="fab fa-twitter twitter"></i></a>
                             </div>
                         </div>
                     </div>
@@ -284,6 +594,280 @@
             <h6>Designed by: <a href="https://github.com/re4nightwing"><span style="color: var(--neon-blue);">re4nightwing</span></a></h6>
         </div>
     </footer>
+    <div class="abs-modal-boot day1-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 01 Session - Syllabus</h2>
+                </div>
+                <h3>1. Introduction about the bootcamp - <span>15 min</span></h3>
+                <h3>Introduction to Game development - <span>30 min</span></h3>
+                <ul>
+                    <li>Game development process</li>
+                    <li>Gaming industry</li>
+                    <li>Job opportunities</li>
+                </ul>
+                <h3>2. Introduction to Unity - <span>1 hour</span></h3>
+                <ul>
+                    <li>What is unity</li>
+                    <li>History of unity game engine</li>
+                    <li>properties of unity game engine</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day1-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day1-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day-2 -->
+    <div class="abs-modal-boot day2-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 02 Session - Syllabus</h2>
+                </div>
+                <h3>1. Unity development environment - <span>40 min</span></h3>
+                <ul>
+                    <li>Understanding unity 3d coordinate space</li>
+                    <li>what are the assets in unity</li>
+                    <li>downloading 3D assets</li>
+                    <li>importing an asset</li>
+                    <li>brief explanation of different panels in unity and their uses</li>
+                </ul>
+                <h3>2. Terrain designing in unity - <span>40 min</span></h3>
+                <ul>
+                    <li>how to Create a mountain</li>
+                    <li>Adding grass and trees</li>
+                    <li>Adding a lake</li>
+                </ul>
+                <h3>3. Physics system and lighting system in unity - <span>40 min</span></h3>
+                <ul>
+                    <li>Introduction to physics system in unity</li>
+                    <li>What is a rigid body</li>
+                    <li>Lighting system in unity</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day2-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day2-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- Day 3 -->
+    <div class="abs-modal-boot day3-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 03 Session - Syllabus</h2>
+                </div>
+                <h3>1. Basics of C# scripting in unity - <span>2 hours</span></h3>
+                <ul>
+                    <li>C# basics (variables, data types, libraries)</li>
+                    <li>Data structures</li>
+                    <li>Loops, conditions and functions</li>
+                    <li>vectors and matrices in unity</li>
+                    <li>Script to moves objects</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day3-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day3-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day 04 -->
+    <div class="abs-modal-boot day4-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 04 Session - Syllabus</h2>
+                </div>
+                <h3>1. Scripting in unity - <span>2 hours</span></h3>
+                <ul>
+                    <li>About the applications of scripting in unity</li>
+                    <li>Code that enables the player to shoot into the scene</li>
+                    <li>Script to create static targets that react to being hit</li>
+                    <li>Script to make the targets wander around</li>
+                    <li>Script to spawn the wandering targets automatically</li>
+                    <li>Script to Enable the targets/enemies to shoot fireballs at the player(AI scripting)</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day4-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day4-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day 05 -->
+    <div class="abs-modal-boot day5-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 05 Session - Syllabus</h2>
+                </div>
+                <h3>1. Concept Arts for game developments - <span>40 min</span></h3>
+                <h3>2. Level designing in games - <span>40 min</span></h3>
+                <h3>3. Designing of game Storyline - <span>40 min</span></h3>
+                <div class="text-center">
+                    <a class="neon-btn" id="day5-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day5-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day 06 -->
+    <div class="abs-modal-boot day6-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 06 Session - Syllabus</h2>
+                </div>
+                <h3>1. Game menu designing for 2D & 3D - <span>40 min</span></h3>
+                <ul>
+                    <li>Properties of a game menu</li>
+                    <li>Designing of a Game menu</li>
+                </ul>
+                <h3>Introduction to cinemachine in unity - <span>30 min</span></h3>
+                <ul>
+                    <li>What is cinemachine in unity</li>
+                    <li>Uses of cinemachine</li>
+                </ul>
+                <h3>2. Sound effects and music in unity - <span>1 hour</span></h3>
+                <ul>
+                    <li>Sound files</li>
+                    <li>Adding sound to game objects</li>
+                    <li>Scripting sounds</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day6-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day6-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day 7 -->
+    <div class="abs-modal-boot day7-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 07 Session - Syllabus</h2>
+                </div>
+                <h3>1. 2D game Designing - <span>2 hours</span></h3>
+                <ul>
+                    <li>Use all the lessons about concept arts and story creation create a simple 2d game with a game menu.</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day7-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day7-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day 8 -->
+    <div class="abs-modal-boot day8-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 08 Session - Syllabus</h2>
+                </div>
+                <h3>1. Introduction to 3d Graphics software(Blender) - <span>20 min</span></h3>
+                <ul>
+                    <li>What is 3D Graphics and its file formats</li>
+                    <li>What are the 3d graphic software</li>
+                    <li>Simple introduction of blender and its user interface</li>
+                </ul>
+                <h3>2. Modeling tutorial - <span>40 min</span></h3>
+                <ul>
+                    <li>Introduction to 3D modeling</li>
+                    <li>Simple modeling techniques(extrude, subdividing, scaling etc.)</li>
+                </ul>
+                <h3>3. Materials & Texture tutorial - <span>20 min</span></h3>
+                <ul>
+                    <li>What are the materials and textures</li>
+                    <li>How to apply materials and textures</li>
+                </ul>
+                <h3>4. Examples for modeling of game objects - <span>40 min</span></h3>
+                <ul>
+                    <li>Modeling simple game objects(ex: chair, gun, table)</li>
+                    <li>Adding materials to them</li>
+                    <li>Exporting the asset as game object</li>
+                    <li>About resources to learn more about 3D Graphics</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day8-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day8-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day 9 -->
+    <div class="abs-modal-boot day9-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 09 Session - Syllabus</h2>
+                </div>
+                <h3>1. 3d Character Modeling and sculpting - <span>1 hour</span></h3>
+                <ul>
+                    <li>Modeling a 3d character</li>
+                    <li>Sculpting the character</li>
+                    <li>Add materials to the character</li>
+                    <li>Exporting the character as a game object</li>
+                </ul>
+                <h3>2. Introduction to 3d Animation - <span>40 min</span></h3>
+                <ul>
+                    <li>What is 3D animation</li>
+                    <li>Animate a simple object</li>
+                    <li>Character animation</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day9-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day9-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+    <!-- day 10 -->
+    <div class="abs-modal-boot day10-abs" hidden>
+        <div class="abs-modal1-content py-5 px-3">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2>Day 10 Session - Syllabus</h2>
+                </div>
+                <h3>Design a 3D Simple game - <span>2 hours</span></h3>
+                <ul>
+                    <li>Putting all the parts together and building a simple game where character can move in a landscape
+                        with mountains, a lake and forest.</li>
+                    <li>Deploying the game (for PC and mobile)</li>
+                </ul>
+                <div class="text-center">
+                    <a class="neon-btn" id="day10-close-in">Close</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" id="day10-close">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
@@ -304,28 +888,17 @@
         });
         new Splide( '#splide', {
             focus    : 'center',
-            perPage  : 4,
+            perPage  : 2,
             trimSpace: false,
             width: '95%',
             type: 'loop',
             rewind: true,
             start: 0,
             autoplay: true,
-            interval: 3000,
+            interval: 2500,
             pauseOnHover: true,
-            pagination: false,
+            pagination: true,
         } ).mount();
-        /* new Splide( '.splide', {
-            type   : 'loop',
-            perPage: 3,
-            rewind: true,
-            width: '95%',
-            start: 1,
-            autoplay: true,
-            interval: 3000,
-            pauseOnHover: true,
-            drag: true
-        }).mount(); */
         $('#bc01').click(swiper,function(){
             swiper.slideTo(1);
         });
@@ -355,6 +928,124 @@
         });
         $('#bc10').click(swiper,function(){
             swiper.slideTo(10);
+        });
+        $('#scrl-down').click(swiper,function(){
+            swiper.slideTo(1);
+        });
+
+        $("#day1-open").click(function () {
+            $(".day1-abs").attr("hidden", false);
+        });
+        $("#day1-close").click(function () {
+            $(".day1-abs").attr("hidden", true);
+        });
+        $("#day1-close-in").click(function () {
+            $(".day1-abs").attr("hidden", true);
+        });
+
+        $("#day2-open").click(function () {
+            $(".day2-abs").attr("hidden", false);
+        });
+        $("#day2-close").click(function () {
+            $(".day2-abs").attr("hidden", true);
+        });
+        $("#day2-close-in").click(function () {
+            $(".day2-abs").attr("hidden", true);
+        });
+
+        $("#day3-open").click(function () {
+            $(".day3-abs").attr("hidden", false);
+        });
+        $("#day3-close").click(function () {
+            $(".day3-abs").attr("hidden", true);
+        });
+        $("#day3-close-in").click(function () {
+            $(".day3-abs").attr("hidden", true);
+        });
+
+        $("#day4-open").click(function () {
+            $(".day4-abs").attr("hidden", false);
+        });
+        $("#day4-close").click(function () {
+            $(".day4-abs").attr("hidden", true);
+        });
+        $("#day4-close-in").click(function () {
+            $(".day4-abs").attr("hidden", true);
+        });
+
+        $("#day5-open").click(function () {
+            $(".day5-abs").attr("hidden", false);
+        });
+        $("#day5-close").click(function () {
+            $(".day5-abs").attr("hidden", true);
+        });
+        $("#day5-close-in").click(function () {
+            $(".day5-abs").attr("hidden", true);
+        });
+
+        $("#day6-open").click(function () {
+            $(".day6-abs").attr("hidden", false);
+        });
+        $("#day6-close").click(function () {
+            $(".day6-abs").attr("hidden", true);
+        });
+        $("#day6-close-in").click(function () {
+            $(".day6-abs").attr("hidden", true);
+        });
+
+        $("#day7-open").click(function () {
+            $(".day7-abs").attr("hidden", false);
+        });
+        $("#day7-close").click(function () {
+            $(".day7-abs").attr("hidden", true);
+        });
+        $("#day7-close-in").click(function () {
+            $(".day7-abs").attr("hidden", true);
+        });
+
+        $("#day8-open").click(function () {
+            $(".day8-abs").attr("hidden", false);
+        });
+        $("#day8-close").click(function () {
+            $(".day8-abs").attr("hidden", true);
+        });
+        $("#day8-close-in").click(function () {
+            $(".day8-abs").attr("hidden", true);
+        });
+
+        $("#day9-open").click(function () {
+            $(".day9-abs").attr("hidden", false);
+        });
+        $("#day9-close").click(function () {
+            $(".day9-abs").attr("hidden", true);
+        });
+        $("#day9-close-in").click(function () {
+            $(".day9-abs").attr("hidden", true);
+        });
+
+        $("#day10-open").click(function () {
+            $(".day10-abs").attr("hidden", false);
+        });
+        $("#day10-close").click(function () {
+            $(".day10-abs").attr("hidden", true);
+        });
+        $("#day10-close-in").click(function () {
+            $(".day10-abs").attr("hidden", true);
+        });
+
+        $(document).keyup(function(e) {
+            if (e.key === "Escape") {
+                $(".day1-abs").attr("hidden", true);
+                $(".day2-abs").attr("hidden", true);
+                $(".day3-abs").attr("hidden", true);
+                $(".day4-abs").attr("hidden", true);
+                $(".day5-abs").attr("hidden", true);
+                $(".day6-abs").attr("hidden", true);
+                $(".day7-abs").attr("hidden", true);
+                $(".day8-abs").attr("hidden", true);
+                $(".day9-abs").attr("hidden", true);
+                $(".day10-abs").attr("hidden", true);
+            }
         });
     </script>
     <script>
