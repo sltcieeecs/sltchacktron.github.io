@@ -251,35 +251,35 @@
                             <ul class="splide__list">
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/1.jpg" class="img-fluid" alt="">
-                                    <button id="bc01" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm01" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/2.jpg" class="img-fluid" alt="">
-                                    <button id="bc02" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm02" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/3.jpg" class="img-fluid" alt="">
-                                    <button id="bc03" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm03" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/4.jpg" class="img-fluid" alt="">
-                                    <button id="bc04" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm04" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/5.jpg" class="img-fluid" alt="">
-                                    <button id="bc05" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm05" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/6.jpg" class="img-fluid" alt="">
-                                    <button id="bc06" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm06" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/7.jpg" class="img-fluid" alt="">
-                                    <button id="bc07" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm07" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/8.jpg" class="img-fluid" alt="">
-                                    <button id="bc08" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm08" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/9.jpg" class="img-fluid" alt="">
@@ -287,7 +287,8 @@
                                 </li>
                                 <li class="splide__slide">
                                     <img src="img/bootcamp/10.jpg" class="img-fluid" alt="">
-                                    <button id="bc10" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button id="bcm10" class="btn splide-btn hvr-shutter-out-horizontal">Go to Bootcamp</button>
+                                    <button onclick="hello()">hi</button>
                                 </li>
                             </ul>
                         </div>
@@ -889,49 +890,67 @@
         new Splide( '#splide', {
             focus    : 'center',
             perPage  : 2,
+            breakpoints: {
+            1024: {
+              perPage: 2,
+             
+            },
+            767: {
+              perPage: 2,
+          
+            },
+            640: {
+              perPage: 1,
+        
+            },
+          },
             trimSpace: false,
             width: '95%',
             type: 'loop',
             rewind: true,
             start: 0,
             autoplay: true,
-            interval: 2500,
+            interval: 22500,
             pauseOnHover: true,
             pagination: true,
         } ).mount();
-        $('#bc01').click(swiper,function(){
+        $('#bcm01').click(swiper,function(){
             swiper.slideTo(1);
         });
-        $('#bc02').click(swiper,function(){
+        $('#bcm02').click(swiper,function(){
             swiper.slideTo(2);
         });
-        $('#bc03').click(swiper,function(){
+        $('#bcm03').click(swiper,function(){
             swiper.slideTo(3);
         });
-        $('#bc04').click(swiper,function(){
+        $('#bcm04').click(swiper,function(){
             swiper.slideTo(4);
         });
-        $('#bc05').click(swiper,function(){
+        $('#bcm05').click(swiper,function(){
             swiper.slideTo(5);
         });
-        $('#bc06').click(swiper,function(){
+        $('#bcm06').click(swiper,function(){
             swiper.slideTo(6);
         });
-        $('#bc07').click(swiper,function(){
+        $('#bcm07').click(swiper,function(){
             swiper.slideTo(7);
         });
-        $('#bc08').click(swiper,function(){
+        $('#bcm08').click(swiper,function(){
             swiper.slideTo(8);
         });
-        $('#bc09').click(swiper,function(){
+        $('#bcm09').click(swiper,function(){
             swiper.slideTo(9);
         });
-        $('#bc10').click(swiper,function(){
+        $('#bcm10').click(swiper,function(){
             swiper.slideTo(10);
         });
         $('#scrl-down').click(swiper,function(){
             swiper.slideTo(1);
         });
+
+function hello(){
+    alert('hello');
+}
 
         $("#day1-open").click(function () {
             $(".day1-abs").attr("hidden", false);
