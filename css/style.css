@@ -612,3 +612,9 @@ footer a:hover{
         font-size: 1rem;
     }
 }
+#sponsor-sec{
+    padding-top: 6rem;
+}
+.text-justify{
+    text-align: justify;
+}
