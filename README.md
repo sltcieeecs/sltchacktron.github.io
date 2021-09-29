@@ -3,4 +3,4 @@
 Official Website for Hacktron v1.0 Game Development Competition organized by IEEE CS Chapter of Sri Lanka Technological Campus.
 
 [Hacktron 1.0V](https://sltchacktron.github.io/)
-![badass ss here](https://i.imgur.com/VRPE5IQ.png)
+![badass ss here](https://i.imgur.com/z3zREew.png)
