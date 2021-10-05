@@ -543,6 +543,11 @@ a{
 .bootcamp-day-img a{
     white-space: nowrap;
 }
+@media (max-height: 768.98px) {
+    .bootcamp-day-img img{
+        width: 400px;
+    }
+}
 @media (max-height: 645.98px) {
     .bootcamp-day-img img{
         width: 300px;
