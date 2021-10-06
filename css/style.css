@@ -193,7 +193,7 @@ a{
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
 }
 .glass-card h1{
     color: #fff;
