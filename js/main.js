@@ -52,7 +52,7 @@ var swiper = new Swiper(".swiper", {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
-  initialSlide: 0,
+  initialSlide: 6,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
