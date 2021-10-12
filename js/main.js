@@ -96,7 +96,7 @@ $(document).keyup(function(e) {
 });
 
 //countdown timer
-var countDownDate = new Date("Oct 12, 2021 23:59:59").getTime();
+var countDownDate = new Date("Oct 18, 2021 23:59:59").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
