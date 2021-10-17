@@ -215,6 +215,27 @@
             background-color: #080a1f;
             border-radius: 20px;
         }
+        @media (max-height: 910.98px) {
+            #task-sec .fas{
+                display: none;
+            }
+        }
+        @media (max-width: 420px) and (max-height: 670px) {
+            #task-head{
+                margin-bottom: 1rem !important;
+            }
+            #task-sub{
+                margin-top: 1rem !important;
+            }
+        }
+        @media (max-width: 414px) and (max-height: 610px) {
+            #task-sec h4{
+                font-size: 1.1rem;
+            }
+            #task-sec .neon-btn{
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -312,32 +333,35 @@
             <div class="swiper-slide">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-12 mb-5">
+                        <div class="col-12 mb-5" id="task-head">
                             <h1>Boocamp Task Sheets</h1>
                         </div>
                         <div class="col-12" id="task-sec">
                             <div class="row justify-content-center text-center">
-                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-auto p-3 task-box">
                                     <i class="fas fa-cubes"></i>
                                     <h4 class="text-light">3D Graphic Designing Task</h4>
                                     <a class="neon-btn" href="https://drive.google.com/file/d/1D2f0XQGxW-U-jeLp8IqEQ4FHH-emdQj8/view?usp=sharing" target="_blank">View Task</a>
                                 </div>
-                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-auto p-3 task-box">
                                     <i class="fas fa-scroll"></i>
                                     <h4 class="text-light">Scripting Task</h4>
                                     <a class="neon-btn" href="https://drive.google.com/file/d/1NeIu08PP0E8kZBIxSw81oRSumNHzKFyW/view?usp=sharing" target="_blank">View Task</a>
                                 </div>
-                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-auto p-3 task-box">
                                     <i class="fas fa-mountain"></i>
                                     <h4 class="text-light">Terrain Designing Task </h4>
                                     <a class="neon-btn" href="https://drive.google.com/file/d/1_0Fp81-ykyo5kcwvjphht8FN_OIVch9P/view?usp=sharing" target="_blank">View Task</a>
                                 </div>
-                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                <div class="col-lg-3 col-md-6 col-sm-6 col-auto p-3 task-box">
                                     <i class="fas fa-paint-brush"></i>
                                     <h4 class="text-light">Concept Art & 2D Designing Task</h4>
                                     <a class="neon-btn" href="https://drive.google.com/file/d/1Dmg3ZGmWItN1uJh6Yn6LkD6k0N7ypLOF/view?usp=sharing" target="_blank">View Task</a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-12 mt-5" id="task-sub">
+                            <a class="neon-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfN-g57ySMv6PjnMy5FQin6ecRN2DO43gpINCY41MopJQ58Gw/viewform" target="_blank">Sumbit Here</a>
                         </div>
                     </div>
                 </div>
