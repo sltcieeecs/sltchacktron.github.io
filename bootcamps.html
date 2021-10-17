@@ -204,6 +204,17 @@
             border-radius: 10px;
             box-shadow: 2px 2px 8px var(--neon-blue);
         }
+        #task-sec .fas{
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .task-box{
+            transition: .4s ease-out;
+        }
+        .task-box:hover{
+            background-color: #080a1f;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -295,6 +306,39 @@
                     <div class="text-center bx-fade-down mt-2" id="scrl-down">
                         <h2 style="cursor: pointer;">Scroll Down</h2>
                         <h1 style="cursor: pointer;"><i class='bx bxs-chevrons-down'></i></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 mb-5">
+                            <h1>Boocamp Task Sheets</h1>
+                        </div>
+                        <div class="col-12" id="task-sec">
+                            <div class="row justify-content-center text-center">
+                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                    <i class="fas fa-cubes"></i>
+                                    <h4 class="text-light">3D Graphic Designing Task</h4>
+                                    <a class="neon-btn" href="https://drive.google.com/file/d/1D2f0XQGxW-U-jeLp8IqEQ4FHH-emdQj8/view?usp=sharing" target="_blank">View Task</a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                    <i class="fas fa-scroll"></i>
+                                    <h4 class="text-light">Scripting Task</h4>
+                                    <a class="neon-btn" href="https://drive.google.com/file/d/1NeIu08PP0E8kZBIxSw81oRSumNHzKFyW/view?usp=sharing" target="_blank">View Task</a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                    <i class="fas fa-mountain"></i>
+                                    <h4 class="text-light">Terrain Designing Task </h4>
+                                    <a class="neon-btn" href="https://drive.google.com/file/d/1_0Fp81-ykyo5kcwvjphht8FN_OIVch9P/view?usp=sharing" target="_blank">View Task</a>
+                                </div>
+                                <div class="col-lg-3 col-md-6 p-3 task-box">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <h4 class="text-light">Concept Art & 2D Designing Task</h4>
+                                    <a class="neon-btn" href="https://drive.google.com/file/d/1Dmg3ZGmWItN1uJh6Yn6LkD6k0N7ypLOF/view?usp=sharing" target="_blank">View Task</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -914,34 +958,34 @@
             pagination: true,
         } ).mount();
         $('#bcm01').click(swiper,function(){
-            swiper.slideTo(1);
-        });
-        $('#bcm02').click(swiper,function(){
             swiper.slideTo(2);
         });
-        $('#bcm03').click(swiper,function(){
+        $('#bcm02').click(swiper,function(){
             swiper.slideTo(3);
         });
-        $('#bcm04').click(swiper,function(){
+        $('#bcm03').click(swiper,function(){
             swiper.slideTo(4);
         });
-        $('#bcm05').click(swiper,function(){
+        $('#bcm04').click(swiper,function(){
             swiper.slideTo(5);
         });
-        $('#bcm06').click(swiper,function(){
+        $('#bcm05').click(swiper,function(){
             swiper.slideTo(6);
         });
-        $('#bcm07').click(swiper,function(){
+        $('#bcm06').click(swiper,function(){
             swiper.slideTo(7);
         });
-        $('#bcm08').click(swiper,function(){
+        $('#bcm07').click(swiper,function(){
             swiper.slideTo(8);
         });
-        $('#bcm09').click(swiper,function(){
+        $('#bcm08').click(swiper,function(){
             swiper.slideTo(9);
         });
-        $('#bcm10').click(swiper,function(){
+        $('#bcm09').click(swiper,function(){
             swiper.slideTo(10);
+        });
+        $('#bcm10').click(swiper,function(){
+            swiper.slideTo(11);
         });
         $('#scrl-down').click(swiper,function(){
             swiper.slideTo(1);
